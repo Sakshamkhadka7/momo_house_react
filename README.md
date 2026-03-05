@@ -1,4 +1,11 @@
 # Momo House project
+
+This website is completely made by using MERN 
+
+# Tech stack
+ **React js**
+ **Contect API**
+
 ![home page](https://github.com/Sakshamkhadka7/momo_house_react/blob/eb9ca937705f7b80e0a6db180485a339f537606a/Screenshot%202026-03-05%20163735.png)
 ![testomonial](https://github.com/Sakshamkhadka7/momo_house_react/blob/a1c5523125d63343235ca9371197ab2f2fcfcb0e/Screenshot%202026-03-05%20163757.png)
 ![services](https://github.com/Sakshamkhadka7/momo_house_react/blob/a1c5523125d63343235ca9371197ab2f2fcfcb0e/Screenshot%202026-03-05%20163818.png)
