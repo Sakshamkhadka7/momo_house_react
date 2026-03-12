@@ -1,16 +1,15 @@
-# React + Vite
+# Momo House project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This website is completely made by using MERN 
 
-Currently, two official plugins are available:
+# Tech stack
+ **React js**
+ **Contect API**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![home page](https://github.com/Sakshamkhadka7/momo_house_react/blob/eb9ca937705f7b80e0a6db180485a339f537606a/Screenshot%202026-03-05%20163735.png)
+![testomonial](https://github.com/Sakshamkhadka7/momo_house_react/blob/a1c5523125d63343235ca9371197ab2f2fcfcb0e/Screenshot%202026-03-05%20163757.png)
+![services](https://github.com/Sakshamkhadka7/momo_house_react/blob/a1c5523125d63343235ca9371197ab2f2fcfcb0e/Screenshot%202026-03-05%20163818.png)
+![menu](https://github.com/Sakshamkhadka7/momo_house_react/blob/a1c5523125d63343235ca9371197ab2f2fcfcb0e/Screenshot%202026-03-05%20163828.png)
+![menu_details](https://github.com/Sakshamkhadka7/momo_house_react/blob/a1c5523125d63343235ca9371197ab2f2fcfcb0e/Screenshot%202026-03-05%20163828.png)
+![esewa_integration](https://github.com/Sakshamkhadka7/momo_house_react/blob/a1c5523125d63343235ca9371197ab2f2fcfcb0e/Screenshot%202026-03-05%20163918.png)
+![payment_success](https://github.com/Sakshamkhadka7/momo_house_react/blob/a1c5523125d63343235ca9371197ab2f2fcfcb0e/Screenshot%202026-03-05%20163945.png)
