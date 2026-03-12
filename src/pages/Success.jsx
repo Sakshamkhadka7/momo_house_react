@@ -2,39 +2,56 @@ import React from "react";
 import { useSearchParams } from "react-router-dom";
 
 const Success = () => {
-  const [SearchParams] = useSearchParams();
-  // console.log(SearchParams.get("data"));
+  const [searchParams] = useSearchParams();
 
-  let res = SearchParams.get("data");
-  console.log(res);
-  res = atob(res);
-  res = JSON.parse(res);
-  console.log(res);
+  let res = searchParams.get("data");
+  if (res) {
+    try {
+      res = JSON.parse(atob(res));
+    } catch (error) {
+      console.error("Failed to parse response:", error);
+    }
+  }
 
   return (
-    <div>
-      <div className="w-80 p-8 space-y-6 shadow-2xl m-auto rounded-2xl mt-10">
-        <div>
+    <div className="flex justify-center items-center min-h-screen bg-gray-50 px-4">
+      <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-2xl rounded-2xl">
+        <div className="flex justify-center">
           <img
-            className="w-full"
+            className="w-24 md:w-32"
             src="https://www.kablooe.com/wp-content/uploads/2019/08/check_mark.png"
-            alt="succesfull"
+            alt="successful"
           />
         </div>
 
-        <div className="text-xl">
-          <div   className="flex justify-between items-center gap-2" >
-            <h1>Status:</h1>
-          <h1 className="text-green-400">{res?.status}</h1>
+        <div className="text-lg md:text-xl space-y-4">
+          <div className="flex justify-between items-center">
+            <h1 className="font-semibold">Status:</h1>
+            <span className="text-green-500 font-bold">{res?.status || "N/A"}</span>
           </div>
-         <div   className="flex justify-between items-center gap-2" >
-             <h1>Total Amount:</h1>
-          <h1 className="text-red-500">{res?.total_amount}</h1>
-         </div>
-          <div   className="flex justify-between items-center gap-2" >
-            <h1>Transaction Code</h1>
-          <h1 className="text-red-500">{res?.transaction_code}</h1>
+
+          <div className="flex justify-between items-center">
+            <h1 className="font-semibold">Total Amount:</h1>
+            <span className="text-red-500 font-bold">
+              {res?.total_amount || "N/A"}
+            </span>
           </div>
+
+          <div className="flex justify-between items-center">
+            <h1 className="font-semibold">Transaction Code:</h1>
+            <span className="text-red-500 font-bold">
+              {res?.transaction_code || "N/A"}
+            </span>
+          </div>
+        </div>
+
+        <div className="flex justify-center mt-4">
+          <button
+            onClick={() => window.location.replace("/menu")}
+            className="bg-[#0C6967] text-white px-6 py-2 rounded-3xl text-sm md:text-base hover:bg-[#095753] transition"
+          >
+            Back to Menu
+          </button>
         </div>
       </div>
     </div>

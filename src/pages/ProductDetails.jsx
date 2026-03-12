@@ -5,14 +5,11 @@ import { CartContext } from "../context/CardProvider";
 
 function ProductDetails() {
   const location = useLocation();
-  const state = location.state; // product data
+  const state = location.state;
   const [counter, setCounter] = useState(1);
 
-  const {dispatch}=useContext(CartContext);
-  
-  console.log(state);
+  const { dispatch } = useContext(CartContext);
 
-  //  SAFETY CHECK (important)
   if (!state) {
     return (
       <div className="text-center mt-20 text-xl">
@@ -24,91 +21,106 @@ function ProductDetails() {
   const { ingredients, instructions, mealType, tags } = state;
 
   return (
-    <main className="my-10">
-      {/* Top Section */}
-      <section className="w-[90vw] m-auto flex gap-5 p-5 bg-white">
-        <div className="p-5">
+    <main className="my-10 px-4 lg:px-10">
+
+      {/* TOP SECTION */}
+      <section className="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-6 flex flex-col lg:flex-row gap-10">
+
+        {/* IMAGE */}
+        <div className="flex justify-center">
           <img
-            className="w-80"
+            className="w-full max-w-sm rounded-xl object-cover"
             src={state.image}
             alt={state.name}
           />
         </div>
 
-        <div className="space-y-6 p-4">
-          <h1 className="text-4xl font-bold">{state.name}</h1>
-          <h1 className="text-xl">{state.rating} (rating)</h1>
+        {/* PRODUCT INFO */}
+        <div className="space-y-6 flex-1">
 
-          <h1 className="text-4xl text-orange-500">
+          <h1 className="text-2xl md:text-4xl font-bold">{state.name}</h1>
+
+          <p className="text-lg">{state.rating} ⭐ rating</p>
+
+          <h2 className="text-3xl text-orange-500 font-semibold">
             Rs. {state.caloriesPerServing}
-          </h1>
+          </h2>
 
-          {/* Quantity */}
-          <div className="flex gap-x-3 items-center text-xl">
+          {/* QUANTITY */}
+          <div className="flex items-center gap-3 text-lg">
             <p>Quantity</p>
 
             <button
               onClick={() => counter > 1 && setCounter(counter - 1)}
-              className="bg-gray-400 w-8 h-8 flex justify-center items-center"
+              className="bg-gray-300 w-8 h-8 flex items-center justify-center rounded"
             >
               <TiMinus />
             </button>
 
-            <p className="bg-gray-100 w-8 h-8 flex justify-center items-center">
+            <p className="bg-gray-100 w-8 h-8 flex items-center justify-center rounded">
               {counter}
             </p>
 
             <button
               onClick={() => setCounter(counter + 1)}
-              className="bg-gray-400 w-8 h-8 flex justify-center items-center"
+              className="bg-gray-300 w-8 h-8 flex items-center justify-center rounded"
             >
               <TiPlus />
             </button>
           </div>
 
-          {/* Buttons */}
-          <div className="space-x-3">
-            <button className="bg-[#2abbe8] p-3 w-48 text-white">
+          {/* BUTTONS */}
+          <div className="flex flex-col sm:flex-row gap-4">
+
+            <button className="bg-[#2abbe8] px-6 py-3 text-white rounded-lg w-full sm:w-auto">
               Buy Now
             </button>
-            <button className="bg-amber-600 p-3 w-48 text-white" onClick={()=>{
-              dispatch({type:"addToCart",payload:state})
-            }}>
+
+            <button
+              className="bg-amber-600 px-6 py-3 text-white rounded-lg w-full sm:w-auto"
+              onClick={() => {
+                dispatch({ type: "addToCart", payload: state });
+              }}
+            >
               Add To Cart
             </button>
+
           </div>
         </div>
       </section>
 
-      {/* Details Section */}
-      <section className="mt-5 w-[90vw] m-auto bg-white p-5">
-        <div className="flex gap-x-16">
-          {/* Ingredients */}
+      {/* DETAILS SECTION */}
+      <section className="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-6 mt-8 space-y-10">
+
+        {/* INGREDIENTS + INSTRUCTIONS */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+
           <div>
-            <h1 className="text-2xl font-bold">Ingredients</h1>
-            <ol className="list-decimal p-5">
+            <h1 className="text-2xl font-bold mb-3">Ingredients</h1>
+            <ol className="list-decimal pl-5 space-y-1">
               {ingredients?.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ol>
           </div>
 
-          {/* Instructions */}
           <div>
-            <h1 className="text-2xl font-bold">Instructions</h1>
-            <ol className="list-decimal p-5">
+            <h1 className="text-2xl font-bold mb-3">Instructions</h1>
+            <ol className="list-decimal pl-5 space-y-1">
               {instructions?.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ol>
           </div>
+
         </div>
 
         <hr />
 
-        <div className="flex gap-x-16 p-5">
-          {/* Meta Info */}
-          <section className="font-bold space-y-1">
+        {/* META INFO */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+          <section className="font-medium space-y-1">
             <p>Cook Time: {state.cookTimeMinutes} min</p>
             <p>Prep Time: {state.prepTimeMinutes} min</p>
             <p>Cuisine: {state.cuisine}</p>
@@ -117,23 +129,26 @@ function ProductDetails() {
             <p>Servings: {state.servings}</p>
           </section>
 
-          {/* Meal Type & Tags */}
           <section>
+
             <h1 className="text-xl font-bold">Meal Type</h1>
-            <ul className="p-3">
+            <ul className="pl-4 list-disc mb-4">
               {mealType?.map((type, index) => (
                 <li key={index}>{type}</li>
               ))}
             </ul>
 
             <h1 className="text-xl font-bold">Tags</h1>
-            <ul className="p-3">
+            <ul className="pl-4 list-disc">
               {tags?.map((tag, index) => (
                 <li key={index}>{tag}</li>
               ))}
             </ul>
+
           </section>
+
         </div>
+
       </section>
     </main>
   );

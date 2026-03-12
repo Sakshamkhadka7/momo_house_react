@@ -24,17 +24,17 @@ const cardReducer = (state, action) => {
       });
 
       if (isExists) {
-          toast.info("Product is already exists", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-      });
+        toast.info("Product is already exists", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
         console.log("Product is already exists");
         return state;
       }
@@ -44,7 +44,7 @@ const cardReducer = (state, action) => {
 
       const newCartItems = [...state.cartItems, newObj];
       console.log(newCartItems);
-         toast.success("Product is added Succesfully", {
+      toast.success("Product is added Succesfully", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -68,8 +68,6 @@ const cardReducer = (state, action) => {
           : items;
       });
 
-   
-
       return {
         cartItems: newObject,
       };
@@ -92,7 +90,7 @@ const cardReducer = (state, action) => {
         return items.id !== action.payload.id;
       });
 
-         toast.warning("Product is deleted Succesfully", {
+      toast.warning("Product is deleted Succesfully", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,

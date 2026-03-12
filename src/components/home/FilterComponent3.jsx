@@ -4,244 +4,224 @@ import like from "../../assets/like.png";
 import parti from "../../assets/parti.png";
 import cate from "../../assets/cate.png";
 import girls2 from "../../assets/girls2.png";
-import { FaArrowLeft } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { FaPhoneAlt } from "react-icons/fa";
+
+import { FaArrowLeft, FaArrowRight, FaPhoneAlt, FaInstagram } from "react-icons/fa";
+import { FaLocationDot, FaArrowRightLong, FaPlay } from "react-icons/fa6";
 import { IoMdTime } from "react-icons/io";
-import { FaInstagram } from "react-icons/fa";
 import { FaSquareFacebook } from "react-icons/fa6";
 import { FaTiktok } from "react-icons/fa";
 
-import { FaPlay } from "react-icons/fa6";
 const FilterComponent3 = () => {
   return (
     <main>
-      <div className="mt-40 relative ">
-        <div>
-          <img src={waiter} />
-        </div>
 
-        <div className="flex flex-col gap-y-4 absolute inset-0 justify-center items-center bg-black/50">
-          <h1 className="text-[#FFFFFF] text-3xl drop-shadow-lg">
+      {/* HERO VIDEO SECTION */}
+      <div className="mt-20 relative">
+        <img src={waiter} className="w-full h-[350px] md:h-[450px] object-cover" />
+
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-black/50 text-center px-4">
+          <h1 className="text-white text-2xl md:text-4xl font-bold">
             Process behind the Making
           </h1>
-          <p className="text-[#FFFFFF] text-xl">
-            See how only chefs cooks only the best momos
+
+          <p className="text-white text-sm md:text-xl">
+            See how our chefs cook the best momos
           </p>
-          <div className="bg-[#0C6967] px-8 py-3 flex justify-center items-center gap-3 rounded-2xl w-60">
+
+          <div className="bg-[#0C6967] px-6 py-3 flex items-center gap-3 rounded-xl text-white cursor-pointer">
             <FaPlay />
-            <h1 className="text-[#FFFFFF] font-bold ">Watch the video</h1>
+            Watch the video
           </div>
         </div>
       </div>
 
-      <section className="flex flex-col items-center justify-center  p-20 gap-10">
-        {/* Upper Div */}
-        <div className="flex justify-around items-center gap-8 w-full">
-          <div className="flex flex-col gap-3">
-            <img src={like} width={100} />
+      {/* SERVICES */}
+      <section className="flex flex-col items-center py-16 px-6 gap-10">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center">
+
+          <div className="flex flex-col items-center gap-3">
+            <img src={like} className="w-20" />
             <h1 className="font-bold text-xl">Quality Food</h1>
-            <p>
-              Only the best food with top quality <br /> products and
-              ingredients
+            <p className="text-gray-600">
+              Only the best food with top quality products and ingredients
             </p>
           </div>
-          <div className="flex flex-col gap-3">
-            <img src={parti} width={100} />
+
+          <div className="flex flex-col items-center gap-3">
+            <img src={parti} className="w-20" />
             <h1 className="font-bold text-xl">Private Party</h1>
-            <p>
-              Get the best food for all your private <br /> parties and
-              gatherings
+            <p className="text-gray-600">
+              Get the best food for your private parties and gatherings
             </p>
           </div>
-          <div className="flex flex-col gap-3">
-            <img src={cate} width={100} />
-            <h1 className="font-bold text-xl">Categring</h1>
-            <p>
-              Get the best food for any occasions <br /> and gatherings
+
+          <div className="flex flex-col items-center gap-3">
+            <img src={cate} className="w-20" />
+            <h1 className="font-bold text-xl">Catering</h1>
+            <p className="text-gray-600">
+              Get the best food for any occasions and gatherings
             </p>
           </div>
+
         </div>
 
-        {/* Button Div (Now correctly centered) */}
-        <div className="flex justify-center items-center gap-2 bg-[#0C6967] w-fit rounded-3xl px-10 py-3 text-white cursor-pointer mt-5">
-          <h1>Explore Our Services</h1>
-
+        <button className="flex items-center gap-2 bg-[#0C6967] px-8 py-3 rounded-full text-white hover:bg-[#095c5b] transition">
+          Explore Our Services
           <FaArrowRightLong />
-        </div>
+        </button>
       </section>
 
-      <section className="flex justify-around">
-        <div className="space-y-10 p-4">
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold">
-              200+ <span className="text-[#D95103]"> Happy Customers</span>
-            </h1>
-            <h1 className="font-bold text-[#0C6967] text-md">
-              What Our customers say about us
-            </h1>
-          </div>
+      {/* TESTIMONIAL */}
+      <section className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 py-16 gap-12">
 
-          <p className="text-[#6B788E] text-xl">
-            “Only the best momo you can find in the market. <br /> Different
-            Varieties of momo to choose from. Will <br /> be visiting again
-            soon”
+        <div className="space-y-6 max-w-xl text-center lg:text-left">
+          <h1 className="text-2xl md:text-3xl font-bold">
+            200+ <span className="text-[#D95103]">Happy Customers</span>
+          </h1>
+
+          <h2 className="font-bold text-[#0C6967]">
+            What our customers say about us
+          </h2>
+
+          <p className="text-gray-500 text-lg">
+            “Only the best momo you can find in the market. Different
+            varieties of momo to choose from. Will be visiting again soon.”
           </p>
 
-          <h1 className="font-bold text-3xl">Livia Dias</h1>
+          <h1 className="font-bold text-2xl">Livia Dias</h1>
 
-          <div className="flex gap-2 ">
-            <div className="bg-white rounded-4xl p-3 border-1">
+          <div className="flex gap-3 justify-center lg:justify-start">
+            <div className="bg-white border p-3 rounded-full">
               <FaArrowLeft />
             </div>
-            <div className="bg-white rounded-4xl p-3 border-1">
+
+            <div className="bg-white border p-3 rounded-full">
               <FaArrowRight />
             </div>
           </div>
         </div>
 
-        <div>
-          <img src={girls2} height={300} width={300} />
-        </div>
+        <img src={girls2} className="w-72 md:w-96 rounded-xl" />
       </section>
 
-      <section className="p-4  mt-20 flex items-center justify-around shadow-2xl">
-        <div className="bg-[#0C6967] rounded-2xl w-[100vh] p-20 space-y-5 shadow-2xl">
-          <div className="1 space-y-4">
-            <div className="flex gap-2 items-center">
-              <FaLocationDot className="text-[#FFFFFF]" />
-              <h2 className="text-[#FFFFFF]">Our Address</h2>
-            </div>
-            <h1 className="italic text-[#FFFFFF]">
-              New Baneshwor, Kathmandu, Bagmati, Nepal
-            </h1>
-          </div>
+      {/* CONTACT SECTION */}
+      <section className="px-6 lg:px-20 py-16 flex flex-col lg:flex-row gap-10">
 
-          <div className="2 space-y-5">
-            <div className="flex gap-2 items-center">
-              <FaPhoneAlt className="text-[#FFFFFF]" />
-              <h1 className="text-[#FFFFFF]">Our Contacts</h1>
-            </div>
+        {/* CONTACT INFO */}
+        <div className="bg-[#0C6967] text-white rounded-2xl p-10 flex-1 space-y-8">
 
-            <div className="flex justify-between">
-              <div className="flex flex-col gap-y-1">
-                <h1 className="font-semibold text-[#FFFFFF]">Mobile</h1>
-                <h1 className="text-[#FFFFFF]">980 5689789</h1>
-                <h1 className="text-[#FFFFFF]">980 5689789</h1>
-              </div>
-
-              <div className="flex flex-col gap-y-1">
-                <h1 className="font-semibold text-[#FFFFFF]">Landline</h1>
-                <h1 className="text-[#FFFFFF]">01-4783972</h1>
-              </div>
-            </div>
-          </div>
-
-          <div className="3 flex flex-col gap-y-2">
+          <div>
             <div className="flex items-center gap-2">
-              <IoMdTime className="text-[#FFFFFF]" />
-              <h1 className="text-[#FFFFFF]">Our Service Time</h1>
+              <FaLocationDot />
+              <h2>Our Address</h2>
+            </div>
+            <p className="italic">
+              New Baneshwor, Kathmandu, Bagmati, Nepal
+            </p>
+          </div>
+
+          <div>
+            <div className="flex items-center gap-2">
+              <FaPhoneAlt />
+              <h2>Our Contacts</h2>
             </div>
 
-            <div className="flex justify-between">
+            <div className="flex justify-between mt-2">
               <div>
-                <h1 className="text-[#FFFFFF]">MON - FRI</h1>
-                <h1 className="text-[#FFFFFF]">10 am - 8 pm</h1>
+                <h3 className="font-semibold">Mobile</h3>
+                <p>9805689789</p>
+                <p>9805689789</p>
               </div>
+
               <div>
-                <h1 className="text-[#FFFFFF]">SAT - SUN</h1>
-                <h1 className="text-[#FFFFFF]">Closed</h1>
+                <h3 className="font-semibold">Landline</h3>
+                <p>01-4783972</p>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-y-2 text-[#FFFFFF] mt-20">
-            <h1>Get in touch in social networks</h1>
-            <div className="flex gap-2">
+          <div>
+            <div className="flex items-center gap-2">
+              <IoMdTime />
+              <h2>Service Time</h2>
+            </div>
+
+            <div className="flex justify-between">
               <div>
-                <FaSquareFacebook />
+                <p>MON - FRI</p>
+                <p>10 am - 8 pm</p>
               </div>
+
               <div>
-                <FaInstagram />
+                <p>SAT - SUN</p>
+                <p>Closed</p>
               </div>
-              <div>
-                <FaTiktok />
-              </div>
+            </div>
+          </div>
+
+          <div>
+            <p>Get in touch in social networks</p>
+            <div className="flex gap-4 mt-2 text-xl">
+              <FaSquareFacebook />
+              <FaInstagram />
+              <FaTiktok />
             </div>
           </div>
         </div>
 
-        <div className="shadow-2xl p-10 rounded-2xl">
-          <form action="" className="flex flex-col gap-y-10">
-            <div className="flex flex-col gap-y-2">
-            <h1 className="font-bold text-2xl">Contact <span className="text-[#D95103]">Us</span></h1>
-            <p className="text-[#6B788E]">If you have any queries, send us a message. Our Friendly team would <br /> love to hear from you</p>
-           </div>
+        {/* CONTACT FORM */}
+        <div className="shadow-xl rounded-2xl p-8 flex-1 bg-white">
 
-            <div className="flex gap-4">
-              <div className="flex flex-col gap-y-2">
-                <label htmlFor="">First Name</label>
-                <input type="text" className="outline rounded-sm" />
-              </div>
-
-              <div className="flex flex-col gap-y-2">
-                <label htmlFor="">Last Name</label>
-                <input type="text" className="outline rounded-sm" />
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-y-2">
-              <label htmlFor="">Email</label>
-              <input type="email" className="outline rounded-sm" />
-            </div>
-
-            <div className="flex flex-col gap-y-2">
-              <label htmlFor="">What can we do for you</label>
-              <select name="" id="">
-                <option value="">Choose</option>
-                <option value="">Choose</option>
-                <option value="">Design</option>
-              </select>
-            </div>
-
-            <div className="flex flex-col gap-y-2">
-              <label htmlFor="">Phone Number</label>
-              <input type="number" className="outline rounded-sm" />
-            </div>
-
-            <div className="flex flex-col gap-y-2">
-              <label htmlFor="">Messages</label>
-              <input type="text" className="outline rounded-sm" />
-            </div>
+          <form className="flex flex-col gap-6">
 
             <div>
-              <button
-                type="submit"
-                className="bg-[#D95103] px-25 py-2 text-[#FFFFFF] rounded-3xl"
-              >
-                Submit
-              </button>
+              <h1 className="font-bold text-2xl">
+                Contact <span className="text-[#D95103]">Us</span>
+              </h1>
+
+              <p className="text-gray-500">
+                If you have any queries send us a message.
+              </p>
             </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <input className="border p-2 rounded" placeholder="First Name" />
+              <input className="border p-2 rounded" placeholder="Last Name" />
+            </div>
+
+            <input className="border p-2 rounded" placeholder="Email" />
+
+            <select className="border p-2 rounded">
+              <option>Choose</option>
+              <option>Design</option>
+            </select>
+
+            <input className="border p-2 rounded" placeholder="Phone Number" />
+
+            <textarea
+              className="border p-2 rounded"
+              placeholder="Message"
+            ></textarea>
+
+            <button className="bg-[#D95103] text-white py-3 rounded-full">
+              Submit
+            </button>
+
           </form>
         </div>
+
       </section>
 
-      <section>
-        <div className="mt-20">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.481059207599!2d85.34316500915129!3d27.67152297610383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190536c1caa7%3A0xf92fcf603dac3960!2sSipalaya%20Info%20Tech%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1770371138376!5m2!1sen!2snp"
-            // width="1200"
-            className="w-full"
-            height="450"
-            // style="border:0;"
-            // allowfullscreen=""
-            // loading="lazy"
-            // referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
+      {/* MAP */}
+      <section className="mt-10">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18..."
+          className="w-full h-[400px]"
+          loading="lazy"
+        ></iframe>
       </section>
+
     </main>
   );
 };
