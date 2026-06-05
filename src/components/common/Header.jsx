@@ -39,7 +39,7 @@ const Header = () => {
         </div>
 
         {/* Hamburger & Profile */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 ">
           {/* Mobile Hamburger */}
           <div className="md:hidden cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <FaTimes size={25} /> : <FaBars size={25} />}

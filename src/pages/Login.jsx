@@ -10,63 +10,69 @@ function Login() {
     e.preventDefault();
     console.log(email, password);
   };
-  const {
-    loginWithRedirect: login, // Starts the login flow
-  } = useAuth0();
+
+  const { loginWithRedirect: login } = useAuth0();
 
   return (
-    <div className="w-125 text-xl m-auto font-mono shadow-2xl rounded-sm shadow-black space-y-4 mt-20 p-16  ">
-      <form
-        onSubmit={(e) => {
-          loginUsers(e);
-        }}
-        className=" space-y-4 "
-      >
-        <div>
-          <label htmlFor="email">
-            Email:
-            <br />
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-6">
+
+        <div className="text-center">
+          <h1 className="text-3xl font-bold text-[#0C6967]">Welcome Back</h1>
+          <p className="text-gray-500 mt-1 text-sm">Sign in to your account</p>
+        </div>
+
+        <form onSubmit={loginUsers} className="space-y-5">
+          <div>
+            <label htmlFor="email" className="font-semibold text-sm text-gray-700">
+              Email
+            </label>
             <input
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-              className="border   outline-none rounded-2xl p-3 w-full"
+              onChange={(e) => setEmail(e.target.value)}
+              className="border outline-none rounded-xl p-3 w-full mt-1 focus:ring-2 focus:ring-[#0C6967]"
               id="email"
               type="email"
-              placeholder="Enter email...."
+              placeholder="Enter your email"
+              required
             />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="password">
-            Password:
-            <br />
+          </div>
+
+          <div>
+            <label htmlFor="password" className="font-semibold text-sm text-gray-700">
+              Password
+            </label>
             <input
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-              className="border   outline-none rounded-2xl p-3 w-full"
+              onChange={(e) => setPassword(e.target.value)}
+              className="border outline-none rounded-xl p-3 w-full mt-1 focus:ring-2 focus:ring-[#0C6967]"
               id="password"
-              type="tel"
-              placeholder="Enter Password...."
+              type="password"
+              placeholder="Enter your password"
+              required
             />
-          </label>
+          </div>
+
+          <button
+            type="submit"
+            className="bg-[#0C6967] hover:bg-[#094f4d] transition-colors text-white w-full py-3 rounded-xl font-bold"
+          >
+            Login
+          </button>
+        </form>
+
+        <div className="flex items-center gap-3 text-gray-400 text-sm">
+          <hr className="flex-1" />
+          <span>or</span>
+          <hr className="flex-1" />
         </div>
 
-        <button 
-        
-        className="bg-green-500 text-white w-full p-4   font-bold ">
-          Login
+        <button
+          onClick={() => login()}
+          className="border hover:bg-gray-50 transition-colors flex items-center justify-center gap-3 p-3 w-full rounded-xl font-medium"
+        >
+          <FcGoogle size={22} />
+          Continue with Google
         </button>
-      </form>
-
-      <button className="border  flex items-center justify-center gap-x-4 p-4 w-full"
-       onClick={()=> login()}
-      >
-        Login With Google
-        
-        <FcGoogle size={25} />
-      </button>
+      </div>
     </div>
   );
 }
